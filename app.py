@@ -91,7 +91,7 @@ logging.basicConfig(
 )
 
 # Lancement de l'interface utilisateur
-gr.ChatInterface(
+demo = gr.ChatInterface(
     inference,
     chatbot=gr.Chatbot(height=400),
     textbox=gr.Textbox(placeholder="Enter text here...", container=True, scale=3),
@@ -108,4 +108,7 @@ gr.ChatInterface(
         "Describe his proficiency with Python programming",
     ],
     theme="soft",
-).queue().launch()
+)
+
+if __name__ == "__main__":
+    demo.queue().launch()
